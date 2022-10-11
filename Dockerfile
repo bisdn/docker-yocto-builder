@@ -59,7 +59,8 @@ COPY gitconfig /home/builder/.gitconfig
 RUN mkdir /home/builder/.ssh \
     && chown builder:builder /home/builder/.ssh \
     && mkdir /home/builder/output \
-    && chown builder:builder /home/builder/output
+    && chown builder:builder /home/builder/output \
+    && pip3 install --no-cache-dir awscli==1.25.90
 
 WORKDIR /home/builder/
 
